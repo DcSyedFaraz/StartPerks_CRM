@@ -99,13 +99,19 @@
     </li>
     @endcan
     @can('Payment Gateways')
-    <li class="nav-item {{ \Route::getFacadeRoot()->current()->uri() == 'paymentgateways' ? 'active' : '' }}">
-        <a  class="d-flex align-items-center"  href="{{url('paymentgateways')}}">
+    <li class="nav-item {{ \Route::getFacadeRoot()->current()->uri() == 'plan' ? 'active' : '' }}">
+        <a  class="d-flex align-items-center"  href="{{url('plan')}}">
             <i data-feather='dollar-sign'></i>
-            <span class="menu-item text-truncate" data-i18n="Payment">Payment Gateways</span>
+            <span class="menu-item text-truncate" data-i18n="Payment">Payment Package</span>
         </a>
     </li>
     @endcan
+    <li class="nav-item {{ \Route::getFacadeRoot()->current()->uri() == 'cust' ? 'active' : '' }}">
+        <a  class="d-flex align-items-center"  href="{{url('cust')}}">
+            <i data-feather='dollar-sign'></i>
+            <span class="menu-item text-truncate" data-i18n="Payment">Add Subscriber</span>
+        </a>
+    </li>
     @can('support')
     <li class="nav-item {{ \Route::getFacadeRoot()->current()->uri() == 'support' ? 'active' : '' }}">
         <a  class="d-flex align-items-center"  href="#">

@@ -27,19 +27,19 @@ Route::group(['middleware' => ['permission:customers_dashboard'], "prefix" => "c
 
     //Customer Dashboard
     Route::get('/dashboard', [ClientDashboardController::Class,"index"])->name('client.dashboard');
-    
+
     Route::get('/personal-funding', [PersionalFundingController::Class,"index"])->name('client.pf');
     Route::get('/bussiness-funding', [BussinessFundingController::Class,"index"])->name('client.bf');
-    
+
     Route::post('/prequailfer-document', [PersionalFundingController::Class,"doc_upload"])->name('prequailfer.document.upload');
     Route::post('/card-upload', [PersionalFundingController::Class,"card_detail_upload"])->name('client.card.upload');
-   
+
     Route::post('/stage-step', [ClientDashboardController::Class,"step_process"])->name('client.card.stage_step');
-    
-    
+
+
     Route::get('/bussiness-credit', [PersionalFundingController::Class,"index"])->name('client.bc');
 
-    
+
     // // tickets
     // Route::get('/Tickets', 'CustomerDashboardController@Tickets')->name('tickets');
 
@@ -60,6 +60,10 @@ Route::group(['middleware' => ['permission:customers_dashboard'], "prefix" => "c
 
     //Admin Dashboard
     Route::resource('/salesman', AdminDashboardController::class);
+    // Plan
+    Route::resource('plan', PaymentController::class);
+    Route::post('subscription', 'PaymentController@subscription')->name("subscription.create");
+    Route::get('cust', 'PaymentController@cust')->name("cust");
     //Admin Dashboard
     Route::get('/admin_dashboard', 'AdminDashboardController@index')->name('dashboard');
 
@@ -73,18 +77,18 @@ Route::group(['middleware' => ['permission:customers_dashboard'], "prefix" => "c
     // ProdutController
     Route::resource('products', ProdutController::class);
     Route::get('products-sales', 'ProdutController@salesList')->name('products-sales');
-    
+
     // ProdutController
      Route::get('addProduct', 'ProdutController@addProduct');
      Route::post('scrapUrlData', 'ProdutController@scrapUrlData');
 
     // banks
-    Route::resource('banks', banksController::class);
+    Route::resource('banks', BanksController::class);
 
     // banks Cards
     Route::resource('bank_cards', BankCardsController::class);
 
-    
+
 
     //permissions
     Route::resource('permissions', PermissionController::class);

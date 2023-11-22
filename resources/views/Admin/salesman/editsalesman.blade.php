@@ -52,7 +52,7 @@
                             <div class="d-flex mb-2">
                                 <img src="{{ asset('images/profile/user-upload/'.$data->profile_image) }}" id="profileimage" alt="users avatar" class="user-avatar users-avatar-shadow rounded me-2 my-25 cursor-pointer" height="90" width="90" />
                                 <div class="mt-50">
-                                    <h4>{{ $data->name; }} </h4>
+                                    <h4>{{ $data->name }} </h4>
                                     <div class="col-12 d-flex mt-1 px-0">
                                         <label class="btn btn-primary me-75 mb-0" for="changePicture">
                                             <span class="d-none d-sm-block">Change</span>
@@ -145,7 +145,7 @@
                                             <label class="form-label" for="mobile">Mobile</label>
                                             <div class="input-group input-group-merge">
                                                    <span class="input-group-text">US (+1)</span>
-                                            <input id="mobile" type="text" class="form-control" value="{{ isset($data->phone_no)?$data->phone_no:'' ; }}" name="phoneNumber" />
+                                            <input id="mobile" type="text" class="form-control" value="{{ isset($data->phone_no)?$data->phone_no:''  }}" name="phoneNumber" />
                                         </div>
                                         </div>
                                     </div>
